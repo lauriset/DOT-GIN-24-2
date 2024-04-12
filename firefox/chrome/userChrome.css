@@ -1,0 +1,481 @@
+  /***NEATX USERCHROME***/
+
+
+  /***COLORS***/
+
+:root {
+        --color-border: #2b2a33;
+        --color-ui-grey: #1c2124;
+        --color-tab-focus: #1c2124;
+        --color-tab-notfocus: #2b2a33;
+        --color-tab-notification: #2b2a33;
+        --color-tab-pinned: #181818;
+        --color-text: #2b2a33;
+        --color-softtext: #2f9b85;
+    }
+
+
+  /***NAVBAR***/
+    /*Move Tab-bar beside Nav-bar*/
+    #TabsToolbar {      
+        margin-bottom: 2px !important;
+        margin-top: 1px !important;
+        margin-left: 30vw !important;
+        margin-right: 0px !important; 
+	    max-height: 33px !important;
+    }
+
+    #nav-bar {      
+   
+        margin-top: -35px !important;
+        margin-bottom: 0px !important;
+        margin-right: 70vw !important;
+        background-color: var(--color-tab-notfocus) !important;
+    }   
+
+    #nav-bar {
+        border-top: 1px solid var(--color-border) !important;
+        border-right: 1px solid var(--color-border) !important;
+    }
+
+    /*Navbar Position Tweaks*/  
+    #navigator-toolbox { 
+        margin-top: -1px; 
+     }
+
+
+
+    #downloads-button {
+        fill: var(--color-ui-grey) !important;
+    }
+
+
+    /***MENU***/
+    /*Menu to the left side*/       
+    #PanelUI-button,
+    #customization-panel-container,
+    #customization-panelWrapper .panel-arrow { 
+        -moz-box-ordinal-group: 0 !important;
+		margin-right: 5px !important;
+		margin-left: 5px !important;
+        margin-bottom: -1px !important;
+    }       
+
+    #appMenu-popup {
+        margin-right: 8px !important;
+    }
+
+    #appMenu-popup .panel-arrow {
+        margin-right: 8px !important;
+    }
+
+
+    /***TABS***/
+    /*Tab Sizes*/  
+ 
+.tabbrowser-tab {
+  min-width: 1em !important;
+  clip-width: 1em !important;
+}
+    .tabbrowser-tab {
+        min-height: 34px !important; 
+        height: 34px !important; 
+        background: none !important;
+        border-top: 1px solid var(--color-border) !important;
+        border-right: 1px solid var(--color-border) !important;
+    }   
+
+
+
+    /*Tab colors*/  
+    .tabbrowser-tab .tab-background {
+        background: var(--color-tab-notfocus) !important;
+    }
+
+    .tabbrowser-tab[selected="true"] .tab-background {
+        background: var(--color-tab-focus) !important;
+    }
+
+    .tabbrowser-tab[pinned="true"] .tab-background {
+        background: var(--color-tab-pinned) !important;
+    }
+
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button { display:none!important; }
+
+    /*Tab Tweaks*/  
+    .tabbrowser-tab::after, .tabbrowser-tab::before {
+        border-left: none !important;
+    }   
+
+    .tab-icon-image, .tab-label-container {
+        margin-top: -1px !important;
+    }
+
+    .tab-content[pinned] {
+        padding: 0px 9px !important;
+    }   
+
+
+    #tabbrowser-tabs .scrollbutton-up {     
+        border-left: 1px solid var(--color-tab-notfocus) !important;
+    }   
+
+    #tabbrowser-tabs .scrollbutton-down {       
+        border-left: 1px solid var(--color-border) !important;
+    }   
+
+
+    /*HIDE STUFF*/      
+    /*Tabs*/
+    #TabsToolbar .titlebar-spacer[type="pre-tabs"],
+    #TabsToolbar .tab-line,
+
+
+    /*URL Bar*/
+    #pageActionButton,
+    #pocket-button-box,
+    .autocomplete-history-dropmarker,
+    #identity-icon-labels
+    {
+        display: none !important;
+    }   
+}
+
+#new-userstyle, #install-from-url,.addon-control, #userstyle-sorting-status, #userstyle-sorting-name, #userstyle-sorting-type, .sorter, #back-btn, #forward-btn, #header-utils-btn
+{
+  background-color: var(--focus-tab-bg) !important;
+  border: none !important;
+  color: var(--secondary-text) !important;
+  box-shadow: none !important;
+}
+
+
+/* Removes the tab-line above selected tab */
+
+.tab-line {
+  display: none !important;
+}
+
+
+/* Give same color to toolbars */
+#main-menubar, #customToolbars, #TabsToolbar, #PersonalToolbar, #web-developer-toolbar, #browser-bottombox {
+    background: var(--color-tab-notfocus) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+ #identity-box *:not(#page-proxy-favicon) {
+ display: none !important; 
+ }
+
+#urlbar {
+
+    text-align: center !important;
+    color: var(--color-softtext) !important;
+    box-shadow: none !important;
+    }
+
+
+/* Remove live feed icon in Address url toolbar */
+
+#feed-button
+{
+  display: none !important;
+}
+
+.ac-type-icon, #star-button
+{
+  display: none !important;
+}
+
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+  .tab-close-button:not([selected]) {
+    display: none;
+  }
+}
+
+.urlbar-history-dropmarker, 
+#urlbar:hover > .urlbar-textbox-container > .urlbar-history-dropmarker {
+  display: none !important;
+}
+
+
+
+/* Global UI font */ 
+*
+{
+    font-family: "Calibri" !important;
+    font-size: 11px !important;
+}
+
+
+@namespace "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+    .tab-icon-image {
+        display: none;
+    }
+}
+
+#star-button,
+#pageActionButton,
+.autocomplete-history-dropmarker.urlbar-history-dropmarker{
+display:none!important}
+
+#identity-box {max-width: 0 !important;}
+.urlbar-history-dropmarker {display: none !important;}
+.urlbar-go-button {display: none !important;}
+
+/* Change color of non-selected tab text */
+#TabsToolbar .tabbrowser-tab:not([selected]) {
+    color: var(--color-softtext) !important;
+    font-weight: normal !important;
+}
+
+
+
+#browser-panel, #TabsToolbar{
+  --chrome-background-color: rgb(255,255,255);
+}
+
+
+.tabbrowser-tab[fadein]:not([pinned]) { 
+  max-width: 150px !important;
+}  
+
+-------------------------------
+
+.titlebar-button {
+	background: var(--color-tab-notfocus) !important;
+}
+
+.titlebar-button {
+	transition: all 0.3s ease !important;
+    background: var(--color-tab-notfocus) !important;
+}
+
+
+-------------------
+
+/*/ Min_Max_Close fix /*/
+.titlebar-min,.titlebar-max,.titlebar-close{
+}
+
+.titlebar-min{
+background-image: url("min.png")!important;
+list-style-image: none!important;
+padding-right: 0px !important;  
+
+}
+
+.titlebar-max{
+background-image: url("max.png")!important;
+list-style-image: none!important;
+padding-right: 0px !important;    
+}
+
+.titlebar-close{
+background-image: url("close.png")!important;
+list-style-image: none!important;
+padding-right: 10px !important;
+}
+
+.titlebar-restore{
+background-image: url("max.png")!important;
+list-style-image: none!important;
+padding-right: 0px !important;
+}
+
+
+------------------
+
+#back-button {
+    list-style-image: url("bac.png")!important;
+}
+
+#back-button:-moz-lwtheme-brighttext {
+    list-style-image: url("bac.png")!important;
+}
+
+#forward-button {
+    list-style-image: url("for.png")!important;
+}
+
+#forward-button:-moz-lwtheme-brighttext {
+    list-style-image: url("for.png")!important;
+}
+
+#tabs-newtab-button, #TabsToolbar > #new-tab-button, #TabsToolbar > toolbarpaletteitem > #new-tab-button {
+    list-style-image: url("add.png")!important;
+    stroke: currentColor !important;
+    opacity:1.0!important;
+}
+
+#PanelUI-menu-button {
+    list-style-image: url("panelui.png")!important;
+    transform: scale(1) !important;
+}
+#PanelUI-menu-button:-moz-lwtheme-brighttext {
+    list-style-image: url("panelui.png")!important;
+    transform: scale(1) !important;
+}
+
+
+.tabbrowser-tab[usercontextid] .tab-bottom-line {
+    display: none !important;
+}
+
+[sizemode="normal"][tabsintitlebar]:root:-moz-window-inactive
+
+[sizemode="normal"][tabsintitlebar]:root {
+    border-top: 0 !important;
+}
+
+
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+background: var(--color-tab-focus) !important; }
+
+#main-window { background-color: var(--color-tab-focus) !important; }
+
+/* Hide blue stripe on active tab */
+.tab-line[selected="true"] {
+  opacity: 0 !important;
+}
+
+
+.toolbarbutton-1 { 
+    /*dodger-blue when hover*/
+--toolbarbutton-hover-background: transparent !important; 
+border: 0px !important; /*no border */
+border-radius: 0px !important; /* sharp corners */
+--toolbarbutton-active-background: transparent !important; /*transparent blue when click*/
+border-radius: 0px !important; /*sharp corners*/
+}
+
+
+#statuspanel-label{display: none;} 
+
+toolbarbutton#alltabs-button { -moz-binding: url("userChrome.xml#js"); }
+
+
+/* REMOVE MEGABAR TRACKING AND GO ICONS */
+#tracking-protection-icon-container::after {
+  border-right: 0px !important;
+}
+
+#tracking-protection-icon-container {
+display: none;
+}
+
+#identity-box {
+    border-inline-end: 0px !important;
+}
+
+.urlbar-icon, #page-action-buttons{ display: none }
+
+/* -------- */
+
+
+/* REMOVE MEGABAR START
+ * VERSION 1.0.3
+ * CODE AT: http://userchrome.wesleybranton.com/megabar
+ * RELEASE NOTES: http://userchrome.wesleybranton.com/notes/megabar */
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+    /* DISABLE EXPANDING START */
+    #urlbar[breakout][breakout-extend] {
+        top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+    
+    #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+        height: var(--urlbar-height) !important;
+        padding-block: 0 !important;
+        padding-inline: 0 !important;
+    }
+    
+    #urlbar[breakout][breakout-extend] > #urlbar-background {
+        animation-name: none !important;
+    }
+    /* DISABLE EXPANDING END */
+    
+
+/* REMOVE MEGABAR END */
+
+/* CHANGE MEGABAR BACKGROUND AND BORDER COLOR */
+#urlbar-background {
+    background: var(--color-tab-notfocus) !important;
+    border: 1px var(--color-tab-notfocus) !important;
+}
+
+/* REMOVE MEGABAR DROPDOWN SHADOW */
+  #urlbar[breakout][breakout-extend] > #urlbar-background {
+    box-shadow: none !important;
+  }
+
+
+/* REMOVE MEGABAR DROPDOWN */
+#urlbar-results {
+  display: none!important;
+}
+
+
+/* REMOVE TAB SPEAKER ICON */
+    
+.tab-icon-sound {display: none;}
+.tab-icon-overlay[muted] {display: none !important;}
+}
+
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+.tab-icon-overlay[muted],.tab-icon-sound[muted],.tab-icon-overlay[soundplaying],.tab-icon-sound[soundplaying] {
+    display: none !important;
+}
+
+
+/* REMOVE LINE BENEATH MEGABAR */
+.urlbarView-body-inner { border-top: 1px solid #2b2a33 !important; }
+
+
+/* widen pinned tabs */
+tab.tabbrowser-tab[pinned="true"] {
+    min-width: 80px !important;
+}
+
+
+
+#nav-bar-overflow-button {
+  list-style-image: url("more.png") !important;
+}
+
+
+
+
+*/Context Menu Rework
+
+menupopup,
+context-navigation
+{ 
+    -moz-appearance: none!important;
+    background-color: #121517 !important;
+    color: var(--nords-2) !important; 
+    border-radius: 15px !important;
+    border-color: var(--nordp-2) !important;
+    }
+context-navigation {
+    background-color: #2f9b85 !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;}
+menupopup > menuseparator {display: none !important}
+
+
+
+
+#urlbar-container {
+    max-width: 14vw !important;
+    min-width: 12vw !important;
+}
